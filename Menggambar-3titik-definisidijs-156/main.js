@@ -22,25 +22,32 @@ function main() {
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
     gl.bindBuffer(gl.ARRAY_BUFFER, null);
 
-    /* --[]-- kalau ditulis di js, terus document get elemntnya di hapus, 
-    ----nanti coba untuk yang di js----
+    // --[]-- kalau ditulis di js, terus document get elemntnya di hapus, 
+    //----nanti coba untuk yang di js----
+    
     var vertexShaderCode = `
-    attribute vec2 a_position;
+    attribute vec2 a_Position;
     void main() {
-        gl_Position = vec4(a_position, 0.0, 1.0);
+        gl_Position = vec4(a_Position, 0.0, 1.0);
         gl_PointSize = 20.0;
-    `;
-    */
+    }`;
+    
 
-    var vertexShaderCode = document.getElementById("vertexShaderCode").text;
+    //var vertexShaderCode = document.getElementById("vertexShaderCode").text;
 
     //membuat titik
     var vertexShader = gl.createShader(gl.VERTEX_SHADER);
     gl.shaderSource(vertexShader, vertexShaderCode);
     gl.compileShader(vertexShader);
 
-    var fragmentShaderCode = document.getElementById("fragmentShaderCode").text;
+    //var fragmentShaderCode = document.getElementById("fragmentShaderCode").text;
     
+    var fragmentShaderCode = `
+    void main() {
+        gl_FragColor = vec4(1.0, 1.0, 0.0, 1.0);
+    }
+    `;
+
     //membuat warna
     var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
     gl.shaderSource(fragmentShader, fragmentShaderCode);
