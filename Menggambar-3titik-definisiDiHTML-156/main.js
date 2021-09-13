@@ -22,7 +22,8 @@ function main() {
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
     gl.bindBuffer(gl.ARRAY_BUFFER, null);
 
-    /* --[]-- kalau ditulis di js
+    /* --[]-- kalau ditulis di js, terus document get elemntnya di hapus, 
+    ----nanti coba untuk yang di js----
     var vertexShaderCode = `
     attribute vec2 a_position;
     void main() {
