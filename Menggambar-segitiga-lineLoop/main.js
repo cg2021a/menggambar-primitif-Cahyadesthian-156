@@ -54,7 +54,7 @@ function main() {
 
 
     //define background
-    gl.clearColor(1.0, 1.0, 1.0, 1.0);
+    gl.clearColor(0.08, 0.08, 0.08, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     //dari yang sebelumnya segitiga dari outline 3 titik gl.drawArrays(gl.LINES, 0,6);, glnya diubah jadi LINE_LOOP terus jumlah vertexnya yang awalnya 6 jad 3 aja

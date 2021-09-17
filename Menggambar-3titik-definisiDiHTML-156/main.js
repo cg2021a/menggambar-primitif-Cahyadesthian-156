@@ -63,7 +63,7 @@ function main() {
 
 
     //define background
-    gl.clearColor(1.0, 1.0, 1.0, 1.0);
+    gl.clearColor(0.08, 0.08, 0.08, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     gl.drawArrays(gl.POINTS, 0,3);

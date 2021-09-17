@@ -10,7 +10,7 @@ function main() {
     var vertexShaderCode = `
     void main() {
         gl_Position = vec4(0.0, 0.0, 0.0, 1.0);
-        gl_PointSize = 10.0;
+        gl_PointSize = 15.0;
     }
     `;
 
@@ -42,7 +42,7 @@ function main() {
     context.useProgram(shaderProgram); //setelah ini sudh siap di compile
 
     //kertas yang akan digambar harus bersih dulu, jadi gambar sebelumnya di clear dulu
-    context.clearColor(0.0, 0.0, 0.0,1.0);  //ini definisi background
+    context.clearColor(0.08, 0.08, 0.08, 1.0);  //ini definisi background
     context.clear(context.COLOR_BUFFER_BIT);
 
     //mulai menggambar

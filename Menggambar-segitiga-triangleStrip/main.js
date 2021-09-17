@@ -14,7 +14,8 @@ function main() {
         //dengan LINE_STRIP titiknya ada 4(tambah A)
         -0.5, 0.5,      // titik A
         -0.5, -0.5,     // titik B
-        0.5, -0.5      // titik C
+        0.5, -0.5,      // titik C
+        0.5, 0.5
     ];
 
 
@@ -58,6 +59,6 @@ function main() {
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     //dengan triangle strip, 3 titik itu tadi jadi ada fillnya
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0,3);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0,3 );
 
 }
