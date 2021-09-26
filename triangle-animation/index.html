@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Animation</title>
+</head>
+<body>
+
+    <h1>Triangle Animation</h1>
+    <h5>Press Left click or space to hold the triangle</h5>
+    <canvas id="myCanvas" width="750px" height="400px">
+        Peramban tidak mendukung canvas HTML5
+    </canvas>
+    <script id="vertexShaderCode" type="notjs">
+        attribute vec2 a_Position;
+        attribute vec3 a_Color;
+        varying vec3 v_Color;
+        uniform float dx;
+        uniform float dy;
+        uniform float dz;
+        void main() {
+            v_Color = a_Color;
+            mat4 translasi = mat4(
+                1.0, 0.0, 0.0, 0.0,
+                0.0, 1.0, 0.0, 0.0,
+                0.0, 0.0, 1.0, 0.0,
+                dx, dy, dz, 1.0
+            );
+            gl_Position = translasi * vec4(a_Position, 0.0, 1.0);
+        }
+
+    </script>    
+
+
+    <script id="fragmentShaderCode" type="notjs">
+        precision mediump float;
+        varying vec3 v_Color;
+        void main() {
+            gl_FragColor = vec4(v_Color, 1.0);
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
